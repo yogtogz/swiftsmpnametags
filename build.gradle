@@ -1,0 +1,44 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+	id 'maven-publish'
+}
+
+version = '1.0.0'
+group = 'com.yogtogz'
+
+base {
+	archivesName = 'swiftsmp_nametag'
+}
+
+repositories {
+	maven { url = "https://fabricmc.net" }
+	mavenCentral()
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+	withSourcesJar()
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    
+    // Use standard 'implementation' instead of 'modImplementation' for MC 26.1+
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+	filteringCharset "UTF-8"
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.release.set(25)
+}

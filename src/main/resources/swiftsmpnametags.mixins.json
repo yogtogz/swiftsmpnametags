@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.yogtogz.swiftsmpnametags.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "PlayerMixin",
+    "PlayerInfoMixin",
+    "AccountProfileKeyPairManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "swiftsmpnametags",
+  "version": "1.1.0",
+  "name": "SwiftSMP Name Tags",
+  "description": "View name tags of other players without having to install the SwiftSMP mod! (Now view skins of others!)",
+  "authors": [ "YogeshTogeshZYT" ],
+  "contact": {},
+  "license": "CC-BY-4.0",
+  "icon": "assets/swiftsmpnametags/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.yogtogz.swiftsmpnametags.SwiftSMPNametagsClient"
+    ]
+  },
+    "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~26.2",
+    "fabric-api": "*"
+  },
+  "mixins": [
+    "swiftsmpnametags.mixins.json"
+  ]
+}
